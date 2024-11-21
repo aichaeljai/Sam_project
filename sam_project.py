@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt # Bibliothèque pour les figures
 from collections import Counter # Importation de la fonction Counter pour compter dans un dictionnaire
 
 
-
+# Lecture du fichier SAM
 # Définition d'une fonction qui s'appelle sam_reading et qui prend comme argument le chemin du fichier SAM
 def sam_reading(sam_file_path):
 # Ouvrir le fichier SAM
@@ -50,7 +50,7 @@ def sam_reading(sam_file_path):
     return flags, quals, coverage, maps_score
 
 
-
+# Question 1: Combien de reads sont mappés ? # compter le nombre de reads en fonction du flag (colonne #2)
 # Je définie une fonction nommée flags_to_binary pour convertir le flag en binaire parceque le flag contient les infos en bit 
 # def (mot clé pour définir la fonction) définit la fonction flags_to_binary qui prend en paramètre (flag_size et flags)
 def flags_to_binary(flag_size, flags):
@@ -83,7 +83,8 @@ def number_of_mapped_reads (flag_size, binary_flags):
     return mapped_reads
 
 
-
+# Question 2: Comment les reads (et paires de reads) sont-ils mappés ? 
+# compter le nombre de reads pour chaque flag
 #Je prend les flags en binaire et on teste la valeur du bit numéro 4 qui indique si c'est mappé sur le brin complémentaire
 #Je définie une fonction nommée mapped_sur_brin_complementaire qui prend en paramètre la taille des flags et les flags en binaire
 def mapped_sur_brin_complementaire (flag_size, binary_flags):
@@ -125,7 +126,8 @@ def second_de_la_paire (flag_size, binary_flags):
 
 
 
-
+# Question 3: Où les reads sont-ils mappés ? L'alignement est-il homogène le long de la séquence de référence ?
+# Compter le nombre de reads par chromosome
 def read_positions (coverage):
     # Ordonner le dictionnaire coverage selon les positions (keys)
     positions = sorted(coverage.keys())
@@ -141,7 +143,7 @@ def read_positions (coverage):
     plt.legend() #Afficher la légende
     plt.show() #Afficher la figure
 
-
+# Question 4
 def mapping_quality (maps_score):
     # La fonction Counter crée un dictionnaire avec chaque valeur de qualité qui est associé au nombre de reads
     mapq_counts = Counter(maps_score)
@@ -160,7 +162,7 @@ def mapping_quality (maps_score):
     return read_quality_greater_30
 
 
-
+# Filtrage des reads avec les reads qui sont compètement mappé et qui ont un score 
 def filtred_reads (mapped_reads, read_quality_greater_30, sam_file_path):
 
     filtred_sam_file = "filtred_reads.sam"
