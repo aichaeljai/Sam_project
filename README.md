@@ -99,7 +99,7 @@ Ensure the input SAM file path is correct and accessible. The script validates t
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the GNU License.
 
 ---
 
