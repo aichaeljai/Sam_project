@@ -7,7 +7,7 @@ This script analyzes SAM files, providing insights into read mapping, quality sc
 ## Features
 
 - Count the number of mapped and unmapped reads.
-- Distinguish between fully and partially mapped reads based on CIGAR strings.
+- Distinguish between fully, incorrectly and partially mapped reads based on CIGAR strings.
 - Analyze mapping quality and visualize results.
 - Determine read distribution across chromosomes.
 - Filter and export reads based on quality thresholds.
