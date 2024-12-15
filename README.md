@@ -2,7 +2,7 @@
 
 # SAM File Analysis Script
 
-This script analyzes SAM files, providing insights into read mapping, quality scores, and reference alignment. It performs various tasks such as counting mapped reads, analyzing alignment coverage, and filtering low-quality reads.
+This script analyzes SAM files, providing insights into read mapping, quality scores, and reference alignment. It performs various tasks such as counting mapped reads, analyzing alignment depth, and filtering low-quality reads.
 
 ## Features
 
@@ -11,7 +11,7 @@ This script analyzes SAM files, providing insights into read mapping, quality sc
 - Analyze mapping quality and visualize results.
 - Determine read distribution across chromosomes.
 - Filter and export reads based on quality thresholds.
-- Provide graphical representation of coverage and mapping quality.
+- Provide graphical representation of depth and mapping quality.
 
 ## Requirements
 
@@ -71,7 +71,7 @@ python script_name.py -i sample.sam -o filtered_output.sam -fs 12
    - Counts the number of paired reads and determines which are first or second in the pair.
 
 4. **Chromosome Distribution**:
-   - Analyzes read distribution across chromosomes and generates a coverage map.
+   - Analyzes read distribution across chromosomes and generates a depth map.
 
 5. **Mapping Quality Analysis**:
    - Visualizes mapping quality and filters low-quality reads (threshold: 30).
@@ -86,7 +86,7 @@ The script generates the following outputs:
 - A filtered SAM file containing high-quality reads.
 - Graphical plots for:
   - Mapping quality distribution.
-  - Coverage across reference sequences.
+  - depth across reference sequences.
 
 ## Limitations
 
